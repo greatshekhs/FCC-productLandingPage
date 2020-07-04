@@ -1,3 +1,5 @@
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
 
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">    
@@ -14,17 +16,17 @@
     #header {
         position: fixed;
         width: auto;
-        min-height: 75px;
         padding: 0 20px;
-        top: 10; 
+        top: 0; 
         display: flex;
         flex-direction: row;
         height: 1em; 
         background-color: #0082f3;
 
+
     }
 
-    nav + ul {
+    nav > ul {
         display: flex;
         flex-direction: row;
         width: 85vw;
@@ -37,7 +39,7 @@
         align-self: flex-end;
     }
 
-    #navbar {
+    #nav-bar {
         margin: 0; 
         padding: 0; 
     }
@@ -73,6 +75,18 @@
         color: #FAE3EB;
         font-weight: 500;
     
+    }
+
+    #submit {
+        margin-top: 10px; 
+        margin-bottom: 20px; 
+        border-radius: 5px;
+        width: 50px; 
+        border: 3px solid #FAE3EB; 
+        padding: 5px 20px 5px 20px;
+        background-color: #0082f3;
+        color: #FAE3EB;
+        font-weight: 500;
     }
 
     #hero {
@@ -128,11 +142,19 @@
         
     }
 
-    #features-container {
+    #features-container1, #features-container2, #works-container{
         display: flex; 
         height: 250px; 
         overflow: hidden; 
         flex-direction: row;
+    }
+
+    @media (max-width: 950px;) {
+        #works-container{
+            display: flex; 
+            height; 300px; 
+            flex-direction: column;
+        }
     }
     
     div.feature {
@@ -143,8 +165,29 @@
     }
 
     .spacer {
-        height: 50px; 
+        height: 450px; 
     }
+
+    #video {
+        display: block; 
+        margin-left: auto; 
+        margin-right: auto;  
+    }
+
+    #footer > ul{
+        height: 50px; 
+        bottom: 0;
+        background-color: #FAE3EB;
+        color: #0082f3;
+        padding: 0 10px; 
+        margin: 40px 0px 0px 0px;
+        width: 100% !important; 
+        display: flex; 
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+    }
+
 
    }
 
@@ -154,13 +197,14 @@
 
 <header id="header">
   
-  
-    <img id="header-image" height= 75px src="images/Tiny.png" alt="tinycontent logo">
-    <nav id="navbar"></nav>
+    <div>
+    <img id="header-img" height= 75px src="images/Tiny.png" alt="tinycontent logo">
+    </div>
+    <nav id="nav-bar">
     <ul>
-      <li><a class="nav-link" href="#Features">Features</a></li>
-      <li><a class="nav-link" href="#Pricing">Pricing</a></li>
-      <li><a class="nav-link" href="#Works">How It Works</a></li>
+      <li><a class="nav-link" href="#What">What we do</a></li>
+      <li><a class="nav-link" href="#TinyStory">The Tiny Story</a></li>
+      <li><a class="nav-link" href="#How">How It Works</a></li>
       <li><button class="unbutton">Join Tiny</button></li>
     </ul>  
   </nav>
@@ -170,15 +214,18 @@
     <div id="hero">
           <h1 id="hero-headline">Hi. We are <span class="special">Tiny!</span></h1>
           <p class="heropara">Your trusted content and PR specialists</p>
-          <input class="subscribe" label="Subscribe" type="email" placeholder="Enter your email.."></input>
-          <button class="unbutton2">Subscribe</button>
+        <form id="form" action=" https://www.freecodecamp.com/email-submit">
+          
+          <input id="email" type="email" name="email" placeholder="Enter your email.."></input>
+          <input id="submit" type="submit" name="Submit" value="Subscribe" action="https://www.freecodecamp.com/email-submit"></input>
+        </form>
     </div>
     <body>
      <section>
-         <h2 class="subhead"> What we do:-</h2>
+         <h2 id="What">What we do :-</h2>
     </section> 
 
-    <div id="features-container">  
+    <div id="features-container1">  
         <div class="feature"> 
             <h3>Product Content</h3>
             <p>You've scaled your business with real customers and revenue. It's profitable ($500k-$15MM), but you're thinking about your next chapter. Either handing the reins to someone else, or partnering for the next phase.</p>
@@ -193,7 +240,9 @@
         </div>
     </div>
 
-    <div id="features-container">  
+    
+
+    <div id="features-container2">  
         <div class="feature"> 
             <h3>Product Content</h3>
             <p>You've scaled your business with real customers and revenue. It's profitable ($500k-$15MM), but you're thinking about your next chapter. Either handing the reins to someone else, or partnering for the next phase.</p>
@@ -208,23 +257,48 @@
         </div>
     </div>
 
-    <div class="spacer"></div>
-    <div class="works-container">
-        <div class="step1">
-            <h4>Hire us for any scope of work</h4>
-            <ul>
-                <li></li>
-            </ul>
+    <div id="spacer">
+        <h2 id="TinyStory">The Tiny Story</h2>
+        <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/XB7HlxwSeoA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <section>
+        <h2 id="How">How it works</h2>
+   </section> 
+
+    <div id="works-container">  
+        <div class="feature"> 
+            <h3>Product Content</h3>
+            <p>You've scaled your business with real customers and revenue. It's profitable ($500k-$15MM), but you're thinking about your next chapter. Either handing the reins to someone else, or partnering for the next phase.</p>
+        </div>
+        <div class="feature">
+            <h3>Product Content</h3>
+            <p>You've scaled your business with real customers and revenue. It's profitable ($500k-$15MM), but you're thinking about your next chapter. Either handing the reins to someone else, or partnering for the next phase.</p>
+        </div>
+        <div class="feature">
+            <h3>Product Content</h3>
+            <p>You've scaled your business with real customers and revenue. It's profitable ($500k-$15MM), but you're thinking about your next chapter. Either handing the reins to someone else, or partnering for the next phase.</p>
+        </div>
+        <div class="feature">
+            <h3>Product Content</h3>
+            <p>You've scaled your business with real customers and revenue. It's profitable ($500k-$15MM), but you're thinking about your next chapter. Either handing the reins to someone else, or partnering for the next phase.</p>
         </div>
     </div>
     
+    <footer>
+        <div id="footer">
+            <ul>
+                <li>WeAreTiny&trade; &copy; 2020</li>
+                <li>Join Tiny</li>
+                <li>Contact Us</li>
+                <li>Privacy</li>
+                <li>Terms of use</li>
+            </ul>
+            </div>            
+        </div>
+    </footer>
+    
         
-
-     <!--
-      <div id="pricing"></div>
-      <div id="Works"></div>
-      <div id="footer"></div>
-      -->
     </body>
   
   
